@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControllerAI;
+use App\Http\Controllers\InputDados;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function () {return view('welcome');
 });
+
+Route::get('/chamadaApi', [ControllerAI::class, 'chamadaApi'])->name('chamada-api');
+Route::post('/chamadaApi', [ControllerAI::class, 'chamadaApi'])->name('chamada-api');
+Route::get('/inputDados', [InputDados::class, 'input'])->name('input');
+// Route::post('/chamada-api', 'ControllerAI@chamadaApi')->name('chamada-api');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -26,3 +33,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
