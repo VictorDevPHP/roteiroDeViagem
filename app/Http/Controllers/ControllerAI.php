@@ -39,7 +39,7 @@ class ControllerAI extends Controller
         $responseData = json_decode($response, true);
         $reply = $responseData["choices"][0]["message"]["content"];
         
-
+        //teste commit
         return view('chamadaApi', ['reply' => $reply]);
     }
 }
