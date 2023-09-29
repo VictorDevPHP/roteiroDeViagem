@@ -15,6 +15,7 @@ use App\Http\Controllers\InputDados;
 |
 */
 
+
 Route::get('/', function () {return view('inputDados');
 });
 
