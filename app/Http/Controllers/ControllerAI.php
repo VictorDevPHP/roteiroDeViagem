@@ -6,7 +6,7 @@ use App\Http\Controllers\InputDados;
 use Illuminate\Http\Request;
 
 class ControllerAI extends Controller
-{
+{   
     public function chamadaApi(Request $request)
     {
         $apiKey = env('KEY_GPT');
@@ -40,6 +40,6 @@ class ControllerAI extends Controller
         $reply = $responseData["choices"][0]["message"]["content"];
         
 
-        return view('chamadaApi', ['reply' => $reply]);
+        return view('chamadaApi', ['reply' => $reply])->extends('layouts.app');
     }
 }

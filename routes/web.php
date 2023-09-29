@@ -15,7 +15,7 @@ use App\Http\Controllers\InputDados;
 |
 */
 
-Route::get('/', function () {return view('welcome');
+Route::get('/', function () {return view('inputDados');
 });
 
 Route::get('/chamadaApi', [ControllerAI::class, 'chamadaApi'])->name('chamada-api');

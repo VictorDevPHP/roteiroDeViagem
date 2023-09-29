@@ -8,7 +8,7 @@ class InputDados extends Controller
 {
     public function input(){
 
-        return view('inputDados');
+        return view('inputDados')->extends('layouts.app');
     }
 
 }
