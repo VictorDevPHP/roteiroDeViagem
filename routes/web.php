@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ControllerAI;
 use App\Http\Controllers\InputDados;
-
+use App\Livewire\news\News;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +22,8 @@ Route::get('/', function () {return view('inputDados');
 Route::get('/chamadaApi', [ControllerAI::class, 'chamadaApi'])->name('chamada-api');
 Route::post('/chamadaApi', [ControllerAI::class, 'chamadaApi'])->name('chamada-api');
 Route::get('/inputDados', [InputDados::class, 'input'])->name('input');
-// Route::post('/chamada-api', 'ControllerAI@chamadaApi')->name('chamada-api');
+
+Route::get('/livewire/news/news', [News::class, 'getNews'])->name('getNews');
 
 
 Route::middleware([
